@@ -9,7 +9,6 @@ DOCKERFILE := ./Dockerfile
 VERSION := latest
 NETWORK := bridge
 OPENAI_API_KEY := 
-OPENAI_ORG := 
 
 .PHONY: help
 help:

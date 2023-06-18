@@ -5,7 +5,6 @@ from box import Box
 
 if "OPENAI_API_KEY" not in os.environ:
     raise RuntimeError("You need to provide an OPENAI_API_KEY!")
-openai.organization = os.getenv("OPENAI_ORG").strip()
 openai.api_key = os.getenv("OPENAI_API_KEY").strip()
 
 with open("/workdir/config.yaml", "r") as f:
@@ -29,7 +28,7 @@ def generate_cards(
         model=model, messages=messages, temperature=temperature, max_tokens=max_tokens
     )
     flashcards = response["choices"][0]["message"]["content"]
-    with open("/workdir/data/flashcards.txt", "w") as f:
+    with open("/workdir/flashcards.txt", "w") as f:
         f.write(flashcards)
 
     return flashcards
