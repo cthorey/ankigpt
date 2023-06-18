@@ -1,0 +1,5 @@
+height: 500
+openai:
+  model: gpt-3.5-turbo-16k
+  temperature: 0.7
+  max_tokens: 5000
