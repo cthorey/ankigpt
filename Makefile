@@ -11,12 +11,6 @@ NETWORK := bridge
 OPENAI_API_KEY := 
 OPENAI_ORG := 
 
-PKG_PATH = ~/workdir/$(NAME)
-
-DOCKER_RUN_ARGS = \
-	--platform linux/amd64 \
-	--volume $(PKG_PATH):/workdir
-
 .PHONY: help
 help:
 	$(info Available make targets:)
@@ -39,5 +33,5 @@ serve: ## Launch the app
 		--env OPENAI_ORG=$(OPENAI_ORG) \
 		--name=$(NAME) \
 		-p 8501:8501 \
-	  $(DOCKER_RUN_ARGS) \
+	  --volume ~/workdir/$(NAME):/workdir \
 		$(NAME):$(VERSION)
