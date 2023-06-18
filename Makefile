@@ -40,5 +40,4 @@ serve: ## Launch the app
 		--name=$(NAME) \
 		-p 8501:8501 \
 	  $(DOCKER_RUN_ARGS) \
-		$(NAME):$(VERSION) sleep infinity
-
+		$(NAME):$(VERSION)
